@@ -16,7 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CatalogActivity"></activity>
+        <activity android:name=".CatalogActivity" />
+
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="com.volianskyi.taras.provider"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
