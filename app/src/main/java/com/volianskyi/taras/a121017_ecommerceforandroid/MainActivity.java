@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 if (l == 0) {
                     startActivity(new Intent(MainActivity.this, CatalogActivity.class));
                 } else if (l == 4) {
-                    startActivity(new Intent(MainActivity.this, AdminMain2Activity.class));
+                    startActivity(new Intent(MainActivity.this, AdminMainActivity.class));
                 }
 
             }

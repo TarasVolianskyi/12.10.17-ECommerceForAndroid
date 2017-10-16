@@ -24,13 +24,19 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AdminMain2Activity" />
+        <activity android:name=".AdminMainActivity" />
         <activity
             android:name=".AdminUsersActivity"
             android:label="@string/title_activity_admin_users"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AdminAddUsersActivity" />
-        <activity android:name=".AdminUpdateUsersActivity"></activity>
+        <activity android:name=".AdminUpdateUsersActivity" />
+        <activity
+            android:name=".AdminProductsActivity"
+            android:label="@string/title_activity_admin_products"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AdminAddProductsActivity" />
+        <activity android:name=".AdminUpdateProductsActivity"></activity>
     </application>
 
 </manifest>

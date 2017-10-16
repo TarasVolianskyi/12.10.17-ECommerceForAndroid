@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class AdminMain2Activity extends AppCompatActivity {
+public class AdminMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +26,13 @@ public class AdminMain2Activity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               // Toast.makeText(AdminMain2Activity.this, "" + array[i], Toast.LENGTH_SHORT).show();
-              //  if (l == 1) {
-                    Intent intent = new Intent(AdminMain2Activity.this, AdminUsersActivity.class);
+                Toast.makeText(AdminMainActivity.this, "" + array[i], Toast.LENGTH_SHORT).show();
+               if (l == 0) {
+                    Intent intent = new Intent(AdminMainActivity.this, AdminUsersActivity.class);
                     startActivity(intent);
-                //} else if (l == 2) {
-                  //  startActivity(new Intent());
-                //}
+              } else if (l == 1) {
+                    startActivity(new Intent(AdminMainActivity.this, AdminProductsActivity.class));
+                }
             }
         });
     }
