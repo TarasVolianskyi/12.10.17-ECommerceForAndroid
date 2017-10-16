@@ -24,10 +24,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity
-            android:name=".AdminMainActivity"
-            android:label="@string/title_activity_admin_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AdminMain2Activity"></activity>
     </application>
 
 </manifest>
