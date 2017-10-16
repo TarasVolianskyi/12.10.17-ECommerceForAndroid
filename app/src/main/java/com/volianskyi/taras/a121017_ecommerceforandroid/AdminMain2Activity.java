@@ -1,5 +1,6 @@
 package com.volianskyi.taras.a121017_ecommerceforandroid;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,11 +26,13 @@ public class AdminMain2Activity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(AdminMain2Activity.this, "" + array[i], Toast.LENGTH_SHORT).show();
-                if(l==1){
-
-                }
-
+               // Toast.makeText(AdminMain2Activity.this, "" + array[i], Toast.LENGTH_SHORT).show();
+              //  if (l == 1) {
+                    Intent intent = new Intent(AdminMain2Activity.this, AdminUsersActivity.class);
+                    startActivity(intent);
+                //} else if (l == 2) {
+                  //  startActivity(new Intent());
+                //}
             }
         });
     }

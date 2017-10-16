@@ -2,4 +2,8 @@
     <string name="app_name">12.10.17-ECommerceForAndroid</string>
     <string name="buy">Buy</string>
     <string name="title_activity_admin_main">AdminMainActivity</string>
+    <string name="title_activity_admin_users">AdminUsersActivity</string>
+    <string name="add">Add new User</string>
+    <string name="delete_third_activity">Delete User</string>
+    <string name="update_third_activity">Update User Information</string>
 </resources>
