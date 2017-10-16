@@ -11,7 +11,7 @@ import android.net.Uri;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String AUTHORITIES = "com.volianskyi.taras.provider";
+    public static final String AUTHORITIES = "com.volianskyi.taras.ecommerce.provider";
     public static final String USERS_TABLE_NAME = "USERS";
     public static final Uri URI_USERS = Uri.parse("content://" + AUTHORITIES + "/" + USERS_TABLE_NAME);
     public static final String PRODUCTS_TABLE_NAME = "PRODUCTS";
@@ -33,6 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + PRICE_PRODUCTS_TABLE + " INT, "
             + CATEGORY_PRODUCTS_TABLE + " TEXT)";
 
+
     public DatabaseHelper(Context context, int version) {
         super(context, "myEComDB", null, version);
     }
@@ -40,7 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_TABLE_USERS);
-        sqLiteDatabase.execSQL(CATEGORY_PRODUCTS_TABLE);
+        sqLiteDatabase.execSQL(CREATE_TABLE_PRODUCTS);
     }
 
     @Override

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">12.10.17-ECommerceForAndroid</string>
+    <string name="buy">Buy</string>
+    <string name="title_activity_admin_main">AdminMainActivity</string>
 </resources>
