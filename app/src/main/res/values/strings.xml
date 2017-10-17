@@ -8,4 +8,6 @@
     <string name="update_third_activity">Update User Information</string>
     <string name="title_activity_admin_products">AdminProductsActivity</string>
     <string name="add_product">Add new Product</string>
+    <string name="delete_prod_item">Delete item</string>
+    <string name="update_prod_item">Update Product</string>
 </resources>

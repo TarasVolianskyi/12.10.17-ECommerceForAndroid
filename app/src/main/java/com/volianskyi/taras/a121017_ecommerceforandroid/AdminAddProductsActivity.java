@@ -22,10 +22,10 @@ public class AdminAddProductsActivity extends AppCompatActivity implements View.
     }
 
     private void initView(){
-        Button btnAdd = (Button) findViewById(R.id.btnAddNewAdminAddUsersActivity);
+        Button btnAdd = (Button) findViewById(R.id.btnAddNewAdminAddProductsActivity);
         btnAdd.setOnClickListener(this);
-        etNameOfNewItemFromAdmin = (EditText) findViewById(R.id.etNameAdminAddUsersActivity);
-        etPriceOfNewItemFromAdmin = (EditText) findViewById(R.id.etPassAdminAddUsersActivity);
+        etNameOfNewItemFromAdmin = (EditText) findViewById(R.id.etNameAdminAddProductsActivity);
+        etPriceOfNewItemFromAdmin = (EditText) findViewById(R.id.etPriceAdminAddProductsActivity);
 
     }
 
@@ -36,7 +36,7 @@ public class AdminAddProductsActivity extends AppCompatActivity implements View.
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.NAME_PRODUCTS_TABLE, nameOfNewUser);
         contentValues.put(DatabaseHelper.PRICE_PRODUCTS_TABLE, passOfNewUser);
-        getContentResolver().insert(DatabaseHelper.URI_USERS, contentValues);
+        getContentResolver().insert(DatabaseHelper.URI_PRODUCTS, contentValues);
         startActivity(new Intent(AdminAddProductsActivity.this, AdminProductsActivity.class));
     }
 }
