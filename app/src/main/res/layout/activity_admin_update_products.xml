@@ -18,19 +18,24 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/tvPassAdminUpdateProductsActivity"
+        android:id="@+id/tvPriceAdminUpdateProductsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvCategoryAdminUpdateProductsActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/etNameAdminUpdateProductsActivity"
-        android:hint="Name"
+        android:hint="@string/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/etPriceAdminUpdateProductsActivity"
-        android:hint="Price"
+        android:hint="@string/et_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -10,4 +10,7 @@
     <string name="add_product">Add new Product</string>
     <string name="delete_prod_item">Delete item</string>
     <string name="update_prod_item">Update Product</string>
+    <string name="add_to_bucket_first_view">Add to bucket</string>
+    <string name="et_name">Name</string>
+    <string name="et_price">Price</string>
 </resources>

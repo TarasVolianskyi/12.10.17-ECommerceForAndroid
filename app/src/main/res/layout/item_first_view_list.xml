@@ -5,20 +5,33 @@
     android:padding="6dp">
 
     <ImageView
-        android:id="@+id/ivBackgroundItemList"
+        android:id="@+id/ivBackgroundItemFirstViewList"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:src="@drawable/fone" />
 
+    <ImageView
+        android:id="@+id/ivImageOfEveryProductItemFirstViewList"
+        android:layout_width="250sp"
+        android:layout_height="200sp" />
+
     <Button
-        android:id="@+id/btnBuyItemList"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnBuyItemFirstViewList"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
         android:layout_gravity="center|right"
         android:text="@string/buy" />
 
+    <Button
+        android:id="@+id/btnAddToBucketItemFirstViewList"
+        android:text="@string/add_to_bucket_first_view"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="35sp"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content" />
+
     <TextView
-        android:id="@+id/tvNameItrmList"
+        android:id="@+id/tvNameItemFirstViewList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|left"
@@ -26,7 +39,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/tvPreviousPriceItemList"
+        android:id="@+id/tvPreviousPriceItemFirstViewList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|right"
@@ -35,10 +48,11 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/tvPriceItemList"
+        android:id="@+id/tvPriceItemFirstViewList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:text="Price"
         android:textSize="24sp" />
+
 </FrameLayout>

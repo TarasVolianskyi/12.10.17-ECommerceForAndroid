@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arrayCategoriesOfProducts">
+        <item>Flower boxes</item>
+        <item>Chocolate</item>
+        <item>Spinners</item>
+        <item>Chewing gum</item>
+        <item>Thermoses</item>
+        <item>My bottle</item>
+        <item>Backpack</item>
+        <item>Present boxes</item>
+        <item>Accessories</item>
+        <item>Other</item>
+    </string-array>
+</resources>

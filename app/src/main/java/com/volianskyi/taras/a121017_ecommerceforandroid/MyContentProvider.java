@@ -32,8 +32,15 @@ public class MyContentProvider extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        // Implement this to handle requests to delete one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        switch (uriMatcher.match(uri)) {
+            case CODE_USERS:
+                return database.delete(DatabaseHelper.USERS_TABLE_NAME, selection, selectionArgs);
+            case CODE_PRODUCTS:
+                return database.delete(DatabaseHelper.PRODUCTS_TABLE_NAME, selection, selectionArgs);
+            default:
+                return 0;
+        }
     }
 
     @Override
@@ -75,7 +82,14 @@ public class MyContentProvider extends ContentProvider {
     @Override
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
-        // TODO: Implement this to handle requests to update one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        switch (uriMatcher.match(uri)) {
+            case CODE_USERS:
+                return database.delete(DatabaseHelper.USERS_TABLE_NAME, selection, selectionArgs);
+            case CODE_PRODUCTS:
+                return database.delete(DatabaseHelper.PRODUCTS_TABLE_NAME, selection, selectionArgs);
+            default:
+                return 0;
+        }
     }
 }

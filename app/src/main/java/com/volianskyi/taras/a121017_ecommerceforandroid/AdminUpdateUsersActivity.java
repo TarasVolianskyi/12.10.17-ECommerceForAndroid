@@ -17,7 +17,6 @@ public class AdminUpdateUsersActivity extends AppCompatActivity implements View.
     private TextView tvPass;
     private EditText etName;
     private EditText etPass;
-    private SQLiteDatabase sqLiteDatabase;
     private long numberOfUserFromList;
 
     @Override
@@ -38,36 +37,28 @@ public class AdminUpdateUsersActivity extends AppCompatActivity implements View.
         Button btnUpdate = (Button) findViewById(R.id.btnUpdateAdminUpdateActivity);
         Button btnDelete = (Button) findViewById(R.id.btnDeleteAdminUpdateActivity);
         tvID.setText("ID - " + numberOfUserFromList);
+        tvName.setText("Name - " + numberOfUserFromList);
+        tvPass.setText("Password - " + numberOfUserFromList);
         btnUpdate.setOnClickListener(this);
         btnDelete.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnUpdateAdminUpdateActivity:
-              /*  tvName.setText(etName.getText().toString());
-                tvPass.setText(etPass.getText().toString());
-                ContentValues contentValues = new ContentValues();
-                contentValues.put("NAME", etName.getText().toString());
-                contentValues.put("PASS", etPass.getText().toString());
-                sqLiteDatabase.update("USERS", contentValues, "_id =?", new String[]{"" + numberOfUserFromList});
-                Toast.makeText(this, "Click update ", Toast.LENGTH_SHORT).show();*/
-           /*     String nameOfNewUser = etName.getText().toString();
-                String passOfNewUser = etPass.getText().toString();
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(DatabaseHelper.NAME_USERS_TABLE, nameOfNewUser);
-                contentValues.put(DatabaseHelper.PASS_USERS_TABLE, passOfNewUser);
-                //getContentResolver().insert(DatabaseHelper.URI_USERS, contentValues);
-                getContentResolver().update(DatabaseHelper.URI_USERS, contentValues, "_id =?", new String[]{"" + numberOfUserFromList});
-                //startActivity(new Intent(AdminUpdateUsersActivity.this, AdminUsersActivity.class));*/
-                finish();
+                String nameUser = etName.getText().toString();
+                String passUser = etPass.getText().toString();
+                ContentValues contentValuesUpdateUsers = new ContentValues();
+                contentValuesUpdateUsers.put(DatabaseHelper.NAME_USERS_TABLE, "test");
+                contentValuesUpdateUsers.put(DatabaseHelper.PASS_USERS_TABLE, "trstr2");
+                getContentResolver().update(DatabaseHelper.URI_USERS, contentValuesUpdateUsers, DatabaseHelper.ID_USERS_TABLE + "=?", new String[]{"" + numberOfUserFromList});
+                Toast.makeText(this, "" + numberOfUserFromList + "name - "+nameUser+" pass - "+passUser, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(AdminUpdateUsersActivity.this, AdminUsersActivity.class));
                 break;
             case R.id.btnDeleteAdminUpdateActivity:
-                sqLiteDatabase.delete("USERS", "_id =?", new String[]{"" + numberOfUserFromList});
-                Toast.makeText(this, "Click delete", Toast.LENGTH_SHORT).show();
-                finish();
+                getContentResolver().delete(DatabaseHelper.URI_USERS, DatabaseHelper.ID_USERS_TABLE + "=?", new String[]{"" + numberOfUserFromList});
+                startActivity(new Intent(AdminUpdateUsersActivity.this, AdminUsersActivity.class));
                 break;
         }
     }
