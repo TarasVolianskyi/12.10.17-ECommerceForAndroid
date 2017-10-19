@@ -10,6 +10,7 @@ import android.net.Uri;
 
 import static android.content.UriMatcher.NO_MATCH;
 
+
 public class MyContentProvider extends ContentProvider {
     public static final int CODE_USERS = 0;
     public static final int CODE_PRODUCTS = 1;
@@ -33,14 +34,19 @@ public class MyContentProvider extends ContentProvider {
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        int res = 0;
         switch (uriMatcher.match(uri)) {
             case CODE_USERS:
-                return database.delete(DatabaseHelper.USERS_TABLE_NAME, selection, selectionArgs);
+                res = database.delete(DatabaseHelper.USERS_TABLE_NAME, selection, selectionArgs);
+                break;
             case CODE_PRODUCTS:
-                return database.delete(DatabaseHelper.PRODUCTS_TABLE_NAME, selection, selectionArgs);
+                res = database.delete(DatabaseHelper.PRODUCTS_TABLE_NAME, selection, selectionArgs);
+                break;
             default:
-                return 0;
+                res = 0;
         }
+        getContext().getContentResolver().notifyChange(uri, null);
+        return res;
     }
 
     @Override
@@ -62,6 +68,7 @@ public class MyContentProvider extends ContentProvider {
                 res = database.insert(DatabaseHelper.PRODUCTS_TABLE_NAME, null, values);
                 break;
         }
+        getContext().getContentResolver().notifyChange(uri, null);
         return ContentUris.withAppendedId(uri, res);
     }
 
@@ -69,27 +76,37 @@ public class MyContentProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        Cursor res = null;
         switch (uriMatcher.match(uri)) {
             case CODE_USERS:
-                return database.query(DatabaseHelper.USERS_TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
+                res = database.query(DatabaseHelper.USERS_TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
+                break;
             case CODE_PRODUCTS:
-                return database.query(DatabaseHelper.PRODUCTS_TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
+                res = database.query(DatabaseHelper.PRODUCTS_TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
+                break;
             default:
-                return null;
+                res = null;
         }
+        res.setNotificationUri(getContext().getContentResolver(), uri);
+        return res;
     }
 
     @Override
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         SQLiteDatabase database = databaseHelper.getWritableDatabase();
+        int res = 0;
         switch (uriMatcher.match(uri)) {
             case CODE_USERS:
-                return database.delete(DatabaseHelper.USERS_TABLE_NAME, selection, selectionArgs);
+                res = database.delete(DatabaseHelper.USERS_TABLE_NAME, selection, selectionArgs);
+                break;
             case CODE_PRODUCTS:
-                return database.delete(DatabaseHelper.PRODUCTS_TABLE_NAME, selection, selectionArgs);
+                res = database.delete(DatabaseHelper.PRODUCTS_TABLE_NAME, selection, selectionArgs);
+                break;
             default:
-                return 0;
+                res = 0;
         }
+        getContext().getContentResolver().notifyChange(uri, null);
+        return res;
     }
 }
