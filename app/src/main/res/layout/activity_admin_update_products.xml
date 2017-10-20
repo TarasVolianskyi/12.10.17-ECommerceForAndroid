@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.volianskyi.taras.a121017_ecommerceforandroid.AdminUpdateProductsActivity">
+    tools:context="com.volianskyi.taras.a121017_ecommerceforandroid.activitis.AdminUpdateProductsActivity">
 
     <TextView
         android:id="@+id/tvIDAdminUpdateProductsActivity"
@@ -38,6 +38,14 @@
         android:hint="@string/et_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/spinnerOfCatogiesAdminUpdateProductsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:background="@android:color/holo_green_light"
+        android:popupBackground="@drawable/blue"
+        android:spinnerMode="dialog" />
 
     <Button
         android:id="@+id/btnUpdateAdminUpdateProductsActivity"

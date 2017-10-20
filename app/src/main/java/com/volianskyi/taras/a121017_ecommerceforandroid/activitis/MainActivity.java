@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.volianskyi.taras.a121017_ecommerceforandroid.R;
 
 public class MainActivity extends AppCompatActivity {
 

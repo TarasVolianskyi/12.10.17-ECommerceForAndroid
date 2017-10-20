@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -14,12 +14,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.volianskyi.taras.a121017_ecommerceforandroid.database.DatabaseHelper;
+import com.volianskyi.taras.a121017_ecommerceforandroid.R;
+
 public class AdminAddProductsActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private EditText etNameOfNewItemFromAdmin;
     private EditText etPriceOfNewItemFromAdmin;
     private EditText etSaleOfItemInPersent;
     private Bundle bundle = new Bundle();
-    private Spinner spinner;
+    private Spinner spinnerOfCatogies;
 
 
     @Override
@@ -39,11 +42,11 @@ public class AdminAddProductsActivity extends AppCompatActivity implements View.
     }
 
     private void spinnerView() {
-        spinner = (Spinner) findViewById(R.id.spinner);
+        spinnerOfCatogies = (Spinner) findViewById(R.id.spinnerOfCatogiesAdminAddProductsActivity);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.arrayCategoriesOfProducts, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerOfCatogies.setAdapter(adapter);
+        spinnerOfCatogies.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(AdminAddProductsActivity.this, "selected - " + l, Toast.LENGTH_SHORT).show();
@@ -62,11 +65,13 @@ public class AdminAddProductsActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View view) {
-        String nameOfNewUser = etNameOfNewItemFromAdmin.getText().toString();
-        String passOfNewUser = etPriceOfNewItemFromAdmin.getText().toString();
+        String nameOfNewProduct = etNameOfNewItemFromAdmin.getText().toString();
+        String priceOfNewProduct = etPriceOfNewItemFromAdmin.getText().toString();
+        String categoryOfNewProduct = spinnerOfCatogies.getSelectedItem().toString();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.NAME_PRODUCTS_TABLE, nameOfNewUser);
-        contentValues.put(DatabaseHelper.PRICE_PRODUCTS_TABLE, passOfNewUser);
+        contentValues.put(DatabaseHelper.NAME_PRODUCTS_TABLE, nameOfNewProduct);
+        contentValues.put(DatabaseHelper.PRICE_PRODUCTS_TABLE, priceOfNewProduct);
+        contentValues.put(DatabaseHelper.CATEGORY_PRODUCTS_TABLE, categoryOfNewProduct);
         getContentResolver().insert(DatabaseHelper.URI_PRODUCTS, contentValues);
         startActivity(new Intent(AdminAddProductsActivity.this, AdminProductsActivity.class));
     }
@@ -76,9 +81,9 @@ public class AdminAddProductsActivity extends AppCompatActivity implements View.
         bundle.putBoolean("RadioGroup", b);
 
         if (b) {
-            findViewById(R.id.spinner).setVisibility(View.VISIBLE);
+            findViewById(R.id.spinnerOfCatogiesAdminAddProductsActivity).setVisibility(View.VISIBLE);
         } else {
-            findViewById(R.id.spinner).setVisibility(View.GONE);
+            findViewById(R.id.spinnerOfCatogiesAdminAddProductsActivity).setVisibility(View.GONE);
         }
     }
 }

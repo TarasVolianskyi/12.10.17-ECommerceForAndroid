@@ -1,8 +1,7 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
 
 import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.volianskyi.taras.a121017_ecommerceforandroid.database.DatabaseHelper;
+import com.volianskyi.taras.a121017_ecommerceforandroid.R;
 
 public class AdminUpdateUsersActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -50,8 +52,8 @@ public class AdminUpdateUsersActivity extends AppCompatActivity implements View.
                 String nameUser = etName.getText().toString();
                 String passUser = etPass.getText().toString();
                 ContentValues contentValuesUpdateUsers = new ContentValues();
-                contentValuesUpdateUsers.put(DatabaseHelper.NAME_USERS_TABLE, "test");
-                contentValuesUpdateUsers.put(DatabaseHelper.PASS_USERS_TABLE, "trstr2");
+                contentValuesUpdateUsers.put(DatabaseHelper.NAME_USERS_TABLE, nameUser);
+                contentValuesUpdateUsers.put(DatabaseHelper.PASS_USERS_TABLE, passUser);
                 getContentResolver().update(DatabaseHelper.URI_USERS, contentValuesUpdateUsers, DatabaseHelper.ID_USERS_TABLE + "=?", new String[]{"" + numberOfUserFromList});
                 Toast.makeText(this, "" + numberOfUserFromList + "name - "+nameUser+" pass - "+passUser, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(AdminUpdateUsersActivity.this, AdminUsersActivity.class));

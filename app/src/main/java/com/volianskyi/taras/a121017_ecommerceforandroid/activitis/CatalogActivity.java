@@ -1,8 +1,12 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+
+import com.volianskyi.taras.a121017_ecommerceforandroid.pojo.Item;
+import com.volianskyi.taras.a121017_ecommerceforandroid.adapter.MyAdapter;
+import com.volianskyi.taras.a121017_ecommerceforandroid.R;
 
 import java.util.ArrayList;
 

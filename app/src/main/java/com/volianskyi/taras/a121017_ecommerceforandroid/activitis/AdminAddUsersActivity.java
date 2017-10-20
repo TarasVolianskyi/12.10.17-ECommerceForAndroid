@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
+
+import com.volianskyi.taras.a121017_ecommerceforandroid.database.DatabaseHelper;
+import com.volianskyi.taras.a121017_ecommerceforandroid.R;
 
 public class AdminAddUsersActivity extends AppCompatActivity implements View.OnClickListener {
     EditText etNameOfNewUserFromAdmin;

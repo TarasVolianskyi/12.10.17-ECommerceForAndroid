@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid;
+package com.volianskyi.taras.a121017_ecommerceforandroid.pojo;
 
 /**
  * Created by tarasvolianskyi on 14.10.17.

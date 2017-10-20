@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid;
+package com.volianskyi.taras.a121017_ecommerceforandroid.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -30,7 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String CATEGORY_PRODUCTS_TABLE = "CATEGORY_OF_PRODUCT";
 
     public static final String ID_CATEGORIES_TABLE = "_id";
-    public static final String NAME_CATEGORIES_TABLE = "NAMR_OF_CATEGORY";
+    public static final String NAME_CATEGORIES_TABLE = "NAME_OF_CATEGORY";
 
     public static final String CREATE_TABLE_USERS = "Create table " + USERS_TABLE_NAME
             + " (" + ID_USERS_TABLE + " INTEGER PRIMARY KEY AUTOINCREMENT, "

@@ -3,6 +3,7 @@
     package="com.volianskyi.taras.a121017_ecommerceforandroid">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,34 +11,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activitis.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CatalogActivity" />
+        <activity android:name=".activitis.CatalogActivity" />
 
         <provider
-            android:name=".MyContentProvider"
+            android:name=".database.MyContentProvider"
             android:authorities="com.volianskyi.taras.ecommerce.provider"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AdminMainActivity" />
+        <activity android:name=".activitis.AdminMainActivity" />
         <activity
-            android:name=".AdminUsersActivity"
+            android:name=".activitis.AdminUsersActivity"
             android:label="@string/title_activity_admin_users"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AdminAddUsersActivity" />
-        <activity android:name=".AdminUpdateUsersActivity" />
+        <activity android:name=".activitis.AdminAddUsersActivity" />
+        <activity android:name=".activitis.AdminUpdateUsersActivity" />
         <activity
-            android:name=".AdminProductsActivity"
+            android:name=".activitis.AdminProductsActivity"
             android:label="@string/title_activity_admin_products"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AdminAddProductsActivity" />
-        <activity android:name=".AdminUpdateProductsActivity"></activity>
+        <activity android:name=".activitis.AdminAddProductsActivity" />
+        <activity android:name=".activitis.AdminUpdateProductsActivity" />
+        <activity android:name=".activitis.CatalogCategoriesActivity"></activity>
     </application>
 
 </manifest>

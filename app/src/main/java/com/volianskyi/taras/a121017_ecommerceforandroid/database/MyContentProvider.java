@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid;
+package com.volianskyi.taras.a121017_ecommerceforandroid.database;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -12,14 +12,16 @@ import static android.content.UriMatcher.NO_MATCH;
 
 
 public class MyContentProvider extends ContentProvider {
-    public static final int CODE_USERS = 0;
-    public static final int CODE_PRODUCTS = 1;
+    public static final int CODE_USERS = 1;
+    public static final int CODE_PRODUCTS = 2;
+    public static final int CODE_CATEGORIES = 3;
     private DatabaseHelper databaseHelper;
     private static UriMatcher uriMatcher = new UriMatcher(NO_MATCH);
 
     static {
         uriMatcher.addURI(DatabaseHelper.AUTHORITIES, DatabaseHelper.USERS_TABLE_NAME, CODE_USERS);
         uriMatcher.addURI(DatabaseHelper.AUTHORITIES, DatabaseHelper.PRODUCTS_TABLE_NAME, CODE_PRODUCTS);
+        uriMatcher.addURI(DatabaseHelper.AUTHORITIES, DatabaseHelper.CATEGORIES_TABLE_NAME, CODE_CATEGORIES);
     }
 
     public MyContentProvider() {
@@ -41,6 +43,9 @@ public class MyContentProvider extends ContentProvider {
                 break;
             case CODE_PRODUCTS:
                 res = database.delete(DatabaseHelper.PRODUCTS_TABLE_NAME, selection, selectionArgs);
+                break;
+            case CODE_CATEGORIES:
+                res = database.delete(DatabaseHelper.CATEGORIES_TABLE_NAME, selection,selectionArgs);
                 break;
             default:
                 res = 0;
@@ -84,6 +89,9 @@ public class MyContentProvider extends ContentProvider {
             case CODE_PRODUCTS:
                 res = database.query(DatabaseHelper.PRODUCTS_TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
                 break;
+            case CODE_CATEGORIES:
+                res = database.query(DatabaseHelper.CATEGORIES_TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
+                break;
             default:
                 res = null;
         }
@@ -98,10 +106,13 @@ public class MyContentProvider extends ContentProvider {
         int res = 0;
         switch (uriMatcher.match(uri)) {
             case CODE_USERS:
-                res = database.delete(DatabaseHelper.USERS_TABLE_NAME, selection, selectionArgs);
+                res = database.update(DatabaseHelper.USERS_TABLE_NAME, values, selection, selectionArgs);
                 break;
             case CODE_PRODUCTS:
-                res = database.delete(DatabaseHelper.PRODUCTS_TABLE_NAME, selection, selectionArgs);
+                res = database.update(DatabaseHelper.PRODUCTS_TABLE_NAME, values, selection, selectionArgs);
+                break;
+            case CODE_CATEGORIES:
+                res = database.update(DatabaseHelper.CATEGORIES_TABLE_NAME, values, selection, selectionArgs);
                 break;
             default:
                 res = 0;

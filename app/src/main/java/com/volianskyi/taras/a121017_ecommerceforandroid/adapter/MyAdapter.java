@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid;
+package com.volianskyi.taras.a121017_ecommerceforandroid.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.volianskyi.taras.a121017_ecommerceforandroid.R;
+import com.volianskyi.taras.a121017_ecommerceforandroid.pojo.Item;
 
 import java.util.ArrayList;
 
@@ -53,7 +56,7 @@ public class MyAdapter extends BaseAdapter {
     }
 
     @Override
-    public long getItemId(int i) {
+    public long getItemId(int i)  {
         return i;
     }
 
@@ -74,8 +77,5 @@ public class MyAdapter extends BaseAdapter {
         btnAddToBucket.setTag(i);
         btnAddToBucket.setOnClickListener(btnAddToBucketClick);
         return myView;
-        //init photo
-
-
     }
 }
