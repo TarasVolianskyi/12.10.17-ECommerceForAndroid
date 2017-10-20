@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis.admin;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -19,6 +19,7 @@ public class AdminAddUsersActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_users);
+        getSupportActionBar().setTitle("Add new User - Admain page");
         initView();
     }
 

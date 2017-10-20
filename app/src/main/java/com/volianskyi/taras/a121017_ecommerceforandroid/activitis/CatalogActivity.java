@@ -16,6 +16,7 @@ public class CatalogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
+        getSupportActionBar().setTitle("Catalog");
         initView();
     }
 

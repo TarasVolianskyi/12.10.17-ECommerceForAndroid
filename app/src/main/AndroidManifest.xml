@@ -26,19 +26,19 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".activitis.AdminMainActivity" />
+        <activity android:name=".activitis.admin.AdminMainActivity" />
         <activity
-            android:name=".activitis.AdminUsersActivity"
+            android:name=".activitis.admin.AdminUsersActivity"
             android:label="@string/title_activity_admin_users"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activitis.AdminAddUsersActivity" />
-        <activity android:name=".activitis.AdminUpdateUsersActivity" />
+        <activity android:name=".activitis.admin.AdminAddUsersActivity" />
+        <activity android:name=".activitis.admin.AdminUpdateUsersActivity" />
         <activity
-            android:name=".activitis.AdminProductsActivity"
+            android:name=".activitis.admin.AdminProductsActivity"
             android:label="@string/title_activity_admin_products"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activitis.AdminAddProductsActivity" />
-        <activity android:name=".activitis.AdminUpdateProductsActivity" />
+        <activity android:name=".activitis.admin.AdminAddProductsActivity" />
+        <activity android:name=".activitis.admin.AdminUpdateProductsActivity" />
         <activity android:name=".activitis.CatalogCategoriesActivity"></activity>
     </application>
 

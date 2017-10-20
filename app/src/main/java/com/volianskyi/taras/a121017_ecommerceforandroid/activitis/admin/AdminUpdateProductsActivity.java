@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis.admin;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -30,6 +30,7 @@ public class AdminUpdateProductsActivity extends AppCompatActivity implements Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_update_products);
+        getSupportActionBar().setTitle("Update Products - Admain page");
         initView();
     }
 

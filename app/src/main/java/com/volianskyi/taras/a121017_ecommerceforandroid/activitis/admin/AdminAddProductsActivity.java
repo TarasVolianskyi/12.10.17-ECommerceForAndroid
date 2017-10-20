@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis.admin;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -29,6 +29,7 @@ public class AdminAddProductsActivity extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_products);
+        getSupportActionBar().setTitle("Add new Product - Admain page");
         initView();
     }
 
