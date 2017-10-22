@@ -33,11 +33,11 @@ public class AdminAddUsersActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View view) {
-        String nameOfNewUser = etNameOfNewUserFromAdmin.getText().toString();
-        String passOfNewUser = etPassOfNewUserFromAdmin.getText().toString();
+        String nameForNewUser = etNameOfNewUserFromAdmin.getText().toString();
+        String passForNewUser = etPassOfNewUserFromAdmin.getText().toString();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.NAME_USERS_TABLE, nameOfNewUser);
-        contentValues.put(DatabaseHelper.PASS_USERS_TABLE, passOfNewUser);
+        contentValues.put(DatabaseHelper.NAME_USERS_TABLE, nameForNewUser);
+        contentValues.put(DatabaseHelper.PASS_USERS_TABLE, passForNewUser);
         getContentResolver().insert(DatabaseHelper.URI_USERS, contentValues);
         startActivity(new Intent(AdminAddUsersActivity.this, AdminUsersActivity.class));
     }
