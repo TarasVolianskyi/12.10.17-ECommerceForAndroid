@@ -39,7 +39,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activitis.admin.AdminAddProductsActivity" />
         <activity android:name=".activitis.admin.AdminUpdateProductsActivity" />
-        <activity android:name=".activitis.CatalogCategoriesActivity"></activity>
+        <activity android:name=".activitis.CatalogCategoriesActivity" />
+        <activity
+            android:name=".activitis.NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activitis.ContactDetailsActivity"></activity>
     </application>
 
 </manifest>

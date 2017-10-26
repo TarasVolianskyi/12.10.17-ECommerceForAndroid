@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "You chouse " + arrayMainList[i], Toast.LENGTH_SHORT).show();
                 if (l == 0) {
                     startActivity(new Intent(MainActivity.this, CatalogCategoriesActivity.class));
+                }else if (l==1){
+                    startActivity(new Intent(MainActivity.this, NavigationActivity.class));
                 } else if (l == 4) {
                     startActivity(new Intent(MainActivity.this, AdminMainActivity.class));
                 }
