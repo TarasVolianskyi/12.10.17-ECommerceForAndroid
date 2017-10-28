@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.volianskyi.taras.a121017_ecommerceforandroid.activitis.ContactDetailsActivity">
-
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.volianskyi.taras.a121017_ecommerceforandroid.activitis.MyCabinetActivity"
+    tools:showIn="@layout/activity_my_cabinet">
 
     <TextView
-        android:id="@+id/tvPhoneContactDetailsActivity"
+        android:id="@+id/tvPhoneMyCabinetActivity"
         android:text="@string/phone_number"
         android:textSize="25sp"
         android:layout_width="match_parent"
@@ -17,18 +18,12 @@
 
 
     <TextView
-        android:id="@+id/tvEmailContactDetailsActivity"
+        android:id="@+id/tvEmailMyCabinetActivity"
         android:text="@string/contact_email"
         android:textSize="25sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 
-    <TextView
-        android:id="@+id/tvAddressContactDetailsActivity"
-        android:text="@string/contact_address"
-        android:textSize="25sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>

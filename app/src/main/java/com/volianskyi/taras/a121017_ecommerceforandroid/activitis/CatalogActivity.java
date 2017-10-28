@@ -2,6 +2,7 @@ package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ListView;
 
 import com.volianskyi.taras.a121017_ecommerceforandroid.pojo.Item;
@@ -18,6 +19,12 @@ public class CatalogActivity extends AppCompatActivity {
         setContentView(R.layout.activity_catalog);
         getSupportActionBar().setTitle("Catalog");
         initView();
+        initList();
+    }
+
+    private void initList() {
+        //RecyclerView rvItemsCatalog = (RecyclerView)
+
     }
 
     private void initView() {
@@ -33,4 +40,6 @@ public class CatalogActivity extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter(arrayList, this);
         listItemsCatalog.setAdapter(myAdapter);
     }
+
+
 }

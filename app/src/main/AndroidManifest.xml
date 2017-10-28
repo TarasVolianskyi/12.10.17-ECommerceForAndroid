@@ -44,7 +44,12 @@
             android:name=".activitis.NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activitis.ContactDetailsActivity"></activity>
+        <activity android:name=".activitis.ContactDetailsActivity" />
+        <activity
+            android:name=".activitis.MyCabinetActivity"
+            android:label="@string/title_activity_my_cabinet"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activitis.Catalog2Activity"></activity>
     </application>
 
 </manifest>

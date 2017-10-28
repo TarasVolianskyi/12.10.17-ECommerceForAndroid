@@ -85,13 +85,13 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-           startActivity(new Intent(NavigationActivity.this, CatalogCategoriesActivity.class));
+            startActivity(new Intent(NavigationActivity.this, CatalogCategoriesActivity.class));
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent(NavigationActivity.this, MyCabinetActivity.class));
         } else if (id == R.id.nav_slideshow) {
-
+            startActivity(new Intent(NavigationActivity.this, ContactDetailsActivity.class));
         } else if (id == R.id.nav_manage) {
-
+           startActivity(new Intent(NavigationActivity.this, Catalog2Activity.class));
         } else if (id == R.id.nav_share) {
             startActivity(new Intent(NavigationActivity.this, AdminMainActivity.class));
         } else if (id == R.id.nav_send) {

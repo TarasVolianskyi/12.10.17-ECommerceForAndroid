@@ -1,9 +1,12 @@
 package com.volianskyi.taras.a121017_ecommerceforandroid.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
+
+import com.volianskyi.taras.a121017_ecommerceforandroid.R;
 
 /**
  * Created by tarasvolianskyi on 14.10.17.
@@ -18,7 +21,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final Uri URI_PRODUCTS = Uri.parse("content://" + AUTHORITIES + "/" + PRODUCTS_TABLE_NAME);
     public static final String CATEGORIES_TABLE_NAME = "CATEGORIES";
     public static final Uri URI_CATEGORIES = Uri.parse("content://" + AUTHORITIES + "/" + CATEGORIES_TABLE_NAME);
-
 
     public static final String ID_USERS_TABLE = "_id";//is should be different for all tables
     public static final String NAME_USERS_TABLE = "NAME_OF_USER";
@@ -45,9 +47,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " (" + ID_CATEGORIES_TABLE + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + NAME_CATEGORIES_TABLE + " TEXT)";
 
+    private Context context;
 
     public DatabaseHelper(Context context, int version) {
         super(context, "myEComDB", null, version);
+        this.context = context;
     }
 
     @Override
@@ -55,6 +59,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(CREATE_TABLE_USERS);
         sqLiteDatabase.execSQL(CREATE_TABLE_PRODUCTS);
         sqLiteDatabase.execSQL(CREATE_TABLE_CATEGORIES);
+        fillDB(sqLiteDatabase);
+    }
+
+    private void fillDB(SQLiteDatabase sqLiteDatabase) {
+        String[] urls = context.getResources().getStringArray(R.array.arrayCategoriesOfProducts);
+        for (int i = 0; i < urls.length; i++) {
+            ContentValues cv = new ContentValues();
+            cv.put(NAME_CATEGORIES_TABLE, urls[i]);
+            sqLiteDatabase.insert(CATEGORIES_TABLE_NAME, null, cv);
+        }
+
     }
 
     @Override
