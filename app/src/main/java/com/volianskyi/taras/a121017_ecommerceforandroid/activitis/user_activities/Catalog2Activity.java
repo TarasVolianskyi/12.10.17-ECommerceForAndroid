@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis.user_activities;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;

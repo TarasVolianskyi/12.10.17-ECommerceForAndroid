@@ -3,9 +3,21 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_sign_in"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Sign in" />
+        <item
+            android:id="@+id/nav_main_page"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Main page" />
+        <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Categories" />
+            android:title="Catalog" />
+        <item
+            android:id="@+id/nav_bucket"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Bucket" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"

@@ -72,6 +72,9 @@ public class MyContentProvider extends ContentProvider {
             case CODE_PRODUCTS:
                 res = database.insert(DatabaseHelper.PRODUCTS_TABLE_NAME, null, values);
                 break;
+            case CODE_CATEGORIES:
+                res = database.insert(DatabaseHelper.CATEGORIES_TABLE_NAME, null, values);
+                break;
         }
         getContext().getContentResolver().notifyChange(uri, null);
         return ContentUris.withAppendedId(uri, res);

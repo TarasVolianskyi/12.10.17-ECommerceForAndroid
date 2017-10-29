@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis.user_activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

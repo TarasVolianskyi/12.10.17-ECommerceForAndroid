@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.volianskyi.taras.a121017_ecommerceforandroid.activitis.CatalogActivity">
+    tools:context="com.volianskyi.taras.a121017_ecommerceforandroid.activitis.user_activities.CatalogActivity">
 
     <ListView
         android:id="@+id/lvMainListCatalogActivity"

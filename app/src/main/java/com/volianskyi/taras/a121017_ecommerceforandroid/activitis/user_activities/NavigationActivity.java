@@ -1,4 +1,4 @@
-package com.volianskyi.taras.a121017_ecommerceforandroid.activitis;
+package com.volianskyi.taras.a121017_ecommerceforandroid.activitis.user_activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -84,8 +84,13 @@ public class NavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+
         if (id == R.id.nav_camera) {
             startActivity(new Intent(NavigationActivity.this, CatalogCategoriesActivity.class));
+        } else if (id == R.id.nav_sign_in) {
+            startActivity(new Intent(NavigationActivity.this, LoginActivity.class));
+        } else if (id == R.id.nav_main_page) {
+            startActivity(new Intent(NavigationActivity.this, NavigationActivity.class));
         } else if (id == R.id.nav_gallery) {
             startActivity(new Intent(NavigationActivity.this, MyCabinetActivity.class));
         } else if (id == R.id.nav_slideshow) {

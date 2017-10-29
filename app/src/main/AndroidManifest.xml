@@ -4,6 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,14 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activitis.MainActivity">
+        <activity android:name=".activitis.user_activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitis.CatalogActivity" />
+        <activity android:name=".activitis.user_activities.CatalogActivity" />
 
         <provider
             android:name=".database.MyContentProvider"
@@ -39,17 +44,20 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activitis.admin.AdminAddProductsActivity" />
         <activity android:name=".activitis.admin.AdminUpdateProductsActivity" />
-        <activity android:name=".activitis.CatalogCategoriesActivity" />
+        <activity android:name=".activitis.user_activities.CatalogCategoriesActivity" />
         <activity
-            android:name=".activitis.NavigationActivity"
+            android:name=".activitis.user_activities.NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activitis.ContactDetailsActivity" />
+        <activity android:name=".activitis.user_activities.ContactDetailsActivity" />
         <activity
-            android:name=".activitis.MyCabinetActivity"
+            android:name=".activitis.user_activities.MyCabinetActivity"
             android:label="@string/title_activity_my_cabinet"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activitis.Catalog2Activity"></activity>
+        <activity android:name=".activitis.user_activities.Catalog2Activity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"></activity>
     </application>
 
 </manifest>
