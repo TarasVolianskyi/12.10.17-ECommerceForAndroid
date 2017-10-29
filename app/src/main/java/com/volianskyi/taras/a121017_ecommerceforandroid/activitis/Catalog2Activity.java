@@ -34,10 +34,10 @@ public class Catalog2Activity extends AppCompatActivity {
         ArrayList<String> arrayList = new ArrayList<>();
         DatabaseHelper helper = new DatabaseHelper(this, 1);
         SQLiteDatabase dataBase = helper.getWritableDatabase();
-        Cursor cursor = dataBase.query(DatabaseHelper.USERS_TABLE_NAME, null, null, null, null, null, null, null);
+        Cursor cursor = dataBase.query(DatabaseHelper.CATEGORIES_TABLE_NAME, null, null, null, null, null, null, null);
         cursor.moveToFirst();
         do {
-            arrayList.add(cursor.getString(cursor.getColumnIndex(DatabaseHelper.NAME_USERS_TABLE)));
+            arrayList.add(cursor.getString(cursor.getColumnIndex(DatabaseHelper.NAME_CATEGORIES_TABLE)));
         } while (cursor.moveToNext());
         return arrayList;
     }

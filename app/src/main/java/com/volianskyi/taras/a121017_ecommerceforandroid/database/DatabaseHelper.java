@@ -63,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     private void fillDB(SQLiteDatabase sqLiteDatabase) {
-        String[] urls = context.getResources().getStringArray(R.array.arrayCategoriesOfProducts);
+        String[] urls = context.getResources().getStringArray(R.array.cars);
         for (int i = 0; i < urls.length; i++) {
             ContentValues cv = new ContentValues();
             cv.put(NAME_CATEGORIES_TABLE, urls[i]);

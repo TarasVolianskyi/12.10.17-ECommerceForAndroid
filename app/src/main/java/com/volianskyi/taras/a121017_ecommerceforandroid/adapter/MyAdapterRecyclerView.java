@@ -29,7 +29,7 @@ public class MyAdapterRecyclerView extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_first_view_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.images_layout, parent, false);
         return new MyRecyclerViewHolder(view);
     }
 
@@ -51,8 +51,8 @@ public class MyAdapterRecyclerView extends RecyclerView.Adapter {
 
         public MyRecyclerViewHolder(View view) {
             super(view);
-            tvName = (TextView) view.findViewById(R.id.tvNameItemFirstViewList);
-            ivPictureOfItem = (ImageView) view.findViewById(R.id.ivImageOfEveryProductItemFirstViewList);
+            tvName = (TextView) view.findViewById(R.id.tvImageItems);
+            ivPictureOfItem = (ImageView) view.findViewById(R.id.ivImageItems);
         }
     }
 }

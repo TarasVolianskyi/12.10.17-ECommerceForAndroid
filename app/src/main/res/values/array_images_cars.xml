@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cars">
+        <item>https://blog.caranddriver.com/wp-content/uploads/2017/04/cars_3_characters-1-876x535.jpg</item>
+        <item>https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/15q1/654923/2016-mclaren-p14-supercar-25-cars-worth-waiting-for-feature-car-and-driver-photo-657582-s-original.jpg</item>
+        <item>https://i.ytimg.com/vi/6JSMAbeUS-4/maxresdefault.jpg</item>
+        <item>http://cdn.cnn.com/cnnnext/dam/assets/161212145759-best-cars-2016-bugatti-1-super-169.jpg</item>
+        <item>https://i.ytimg.com/vi/EUd2N0U0_xk/hqdefault.jpg</item>
+    </string-array>
+
+</resources>
