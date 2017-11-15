@@ -8,4 +8,17 @@
     tools:context="com.volianskyi.taras.a121017_ecommerceforandroid.activitis.user_activities.NavigationActivity"
     tools:showIn="@layout/app_bar_navigation">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivLogoNavigationContentActivity"
+            android:src="@drawable/logo_gift"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
