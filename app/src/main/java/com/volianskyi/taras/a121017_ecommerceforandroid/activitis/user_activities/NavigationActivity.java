@@ -18,10 +18,12 @@ import com.volianskyi.taras.a121017_ecommerceforandroid.R;
 import com.volianskyi.taras.a121017_ecommerceforandroid.activitis.admin.AdminMainActivity;
 
 public class NavigationActivity extends AppCompatActivity
+
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        int iee = 3;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -96,7 +98,7 @@ public class NavigationActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
             startActivity(new Intent(NavigationActivity.this, ContactDetailsActivity.class));
         } else if (id == R.id.nav_manage) {
-           startActivity(new Intent(NavigationActivity.this, Catalog2Activity.class));
+            startActivity(new Intent(NavigationActivity.this, Catalog2Activity.class));
         } else if (id == R.id.nav_share) {
             startActivity(new Intent(NavigationActivity.this, AdminMainActivity.class));
         } else if (id == R.id.nav_send) {
