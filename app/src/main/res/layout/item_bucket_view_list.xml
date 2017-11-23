@@ -17,6 +17,7 @@
         android:layout_gravity="top|left"/>
 
     <TextView
+        android:id="@+id/tvNameItemBucketViewList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="2"
@@ -25,6 +26,7 @@
 
 
     <TextView
+        android:id="@+id/tvTotalPriceForThisProdItemBucketViewList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -32,7 +34,7 @@
         android:layout_gravity="bottom|right"/>
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/btnDialogNumberOfProdItemBucketViewList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -40,6 +42,7 @@
         android:layout_gravity="bottom|center"/>
 
     <TextView
+        android:id="@+id/tvPriceItemBucketViewList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

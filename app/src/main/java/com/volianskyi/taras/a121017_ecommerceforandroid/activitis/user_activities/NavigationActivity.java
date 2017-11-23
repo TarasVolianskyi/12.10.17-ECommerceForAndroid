@@ -87,12 +87,12 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
 
-        if (id == R.id.nav_catalog) {
-            startActivity(new Intent(NavigationActivity.this, CatalogCategoriesActivity.class));
-        } else if (id == R.id.nav_sign_in) {
+        if (id == R.id.nav_sign_in) {
             startActivity(new Intent(NavigationActivity.this, LoginActivity.class));
         } else if (id == R.id.nav_main_page) {
             startActivity(new Intent(NavigationActivity.this, NavigationActivity.class));
+        } else if (id == R.id.nav_catalog) {
+            startActivity(new Intent(NavigationActivity.this, CatalogCategoriesActivity.class));
         } else if (id == R.id.nav_bucket) {
             startActivity(new Intent(NavigationActivity.this, BucketActivity.class));
         } else if (id == R.id.nav_my_cabinet) {
