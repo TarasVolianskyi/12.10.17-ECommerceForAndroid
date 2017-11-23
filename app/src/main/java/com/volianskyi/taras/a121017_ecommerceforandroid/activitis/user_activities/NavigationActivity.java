@@ -87,19 +87,21 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_catalog) {
             startActivity(new Intent(NavigationActivity.this, CatalogCategoriesActivity.class));
         } else if (id == R.id.nav_sign_in) {
             startActivity(new Intent(NavigationActivity.this, LoginActivity.class));
         } else if (id == R.id.nav_main_page) {
             startActivity(new Intent(NavigationActivity.this, NavigationActivity.class));
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_bucket) {
+            startActivity(new Intent(NavigationActivity.this, BucketActivity.class));
+        } else if (id == R.id.nav_my_cabinet) {
             startActivity(new Intent(NavigationActivity.this, MyCabinetActivity.class));
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_contact_details) {
             startActivity(new Intent(NavigationActivity.this, ContactDetailsActivity.class));
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_properties) {
             startActivity(new Intent(NavigationActivity.this, Catalog2Activity.class));
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_admin_page) {
             startActivity(new Intent(NavigationActivity.this, AdminMainActivity.class));
         } else if (id == R.id.nav_send) {
 

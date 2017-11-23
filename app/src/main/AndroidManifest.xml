@@ -16,9 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activitis.user_activities.MainActivity">
-
-        </activity>
+        <activity android:name=".activitis.user_activities.MainActivity"></activity>
         <activity android:name=".activitis.user_activities.CatalogActivity" />
 
         <provider
@@ -59,7 +57,8 @@
         <activity android:name=".activitis.user_activities.Catalog2Activity" />
         <activity
             android:name=".activitis.user_activities.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity android:name=".activitis.user_activities.BucketActivity"></activity>
     </application>
 
 </manifest>

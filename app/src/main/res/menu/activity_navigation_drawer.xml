@@ -11,7 +11,7 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Main page" />
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_catalog"
             android:icon="@drawable/ic_menu_camera"
             android:title="Catalog" />
         <item
@@ -19,15 +19,15 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Bucket" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_my_cabinet"
             android:icon="@drawable/ic_menu_gallery"
             android:title="My Cabinet" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_contact_details"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Contact details" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_properties"
             android:icon="@drawable/ic_menu_manage"
             android:title="Properties" />
     </group>
@@ -35,7 +35,7 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_admin_page"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Admin page" />
             <item
