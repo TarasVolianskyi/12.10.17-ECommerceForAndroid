@@ -15,8 +15,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.volianskyi.taras.a121017_ecommerceforandroid.R;
 import com.volianskyi.taras.a121017_ecommerceforandroid.pojo.Item;
+
 import java.util.ArrayList;
 
 public class MyBucketAdapter extends BaseAdapter {
@@ -32,13 +34,13 @@ public class MyBucketAdapter extends BaseAdapter {
             Toast.makeText(context, "You click at product number " + id, Toast.LENGTH_SHORT).show();
         }
     };
-    private View.OnClickListener btnAddToBucketClick = new View.OnClickListener() {
+   /* private View.OnClickListener btnAddToBucketClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             int id = (int) view.getTag();
             Toast.makeText(context, "You add to bucket product number " + id, Toast.LENGTH_SHORT).show();
         }
-    };
+    };*/
 
     public MyBucketAdapter(ArrayList<Item> data, Context context) {
         this.data = data;
@@ -64,18 +66,17 @@ public class MyBucketAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         Item item = data.get(i);
         View myView = LayoutInflater.from(context).inflate(R.layout.item_bucket_view_list, viewGroup, false);
-        TextView tvName = (TextView) myView.findViewById(R.id.tvNameItemFirstViewList);
+        TextView tvName = (TextView) myView.findViewById(R.id.tvNameItemBucketViewList);
         TextView tvPrice = (TextView) myView.findViewById(R.id.tvPriceItemFirstViewList);
-        TextView tvPreviousPrice = (TextView) myView.findViewById(R.id.tvPreviousPriceItemFirstViewList);
+        TextView tvTotalPrice = (TextView) myView.findViewById(R.id.tvTotalPriceForThisProdItemBucketViewList);
         tvName.setText(item.getName());
-        tvPrice.setText(item.getPrice());
-        tvPreviousPrice.setText(item.getPrevoiusPrice());
-        Button btnBuy = (Button) myView.findViewById(R.id.btnBuyItemFirstViewList);
-        Button btnAddToBucket = (Button) myView.findViewById(R.id.btnAddToBucketItemFirstViewList);
-        btnBuy.setTag(i);
-        btnBuy.setOnClickListener(btnBuyClick);
-        btnAddToBucket.setTag(i);
-        btnAddToBucket.setOnClickListener(btnAddToBucketClick);
+        //tvPrice.setText(item.getPrice());
+        tvTotalPrice.setText("total price is - "+item.getPrevoiusPrice());
+
+        Button btnNumberOfItems = (Button) myView.findViewById(R.id.btnDialogNumberOfProdItemBucketViewList);
+        btnNumberOfItems.setTag(i);
+        btnNumberOfItems.setOnClickListener(btnBuyClick);
+
         return myView;
     }
 }

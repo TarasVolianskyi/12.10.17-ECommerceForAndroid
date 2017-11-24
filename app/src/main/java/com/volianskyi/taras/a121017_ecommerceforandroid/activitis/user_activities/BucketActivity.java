@@ -28,13 +28,13 @@ public class BucketActivity extends AppCompatActivity {
             Item newItem = new Item();
             newItem.setName("Product - " + i);
             newItem.setPrice("Prise - " + i * 70);
-            newItem.setPrevoiusPrice("Previous price - " + i * 90);
+            //newItem.setPrevoiusPrice("Previous price - " + i * 90);
             arrayList.add(newItem);
         }
-        MyAdapter myAdapter = new MyAdapter(arrayList, this);
-        listItemsCatalog.setAdapter(myAdapter);
-        //MyBucketAdapter myBucketAdapter = new MyBucketAdapter(arrayList, this);
-        //listItemsCatalog.setAdapter(myBucketAdapter);
+       // MyAdapter myAdapter = new MyAdapter(arrayList, this);
+        //listItemsCatalog.setAdapter(myAdapter);
+        MyBucketAdapter myBucketAdapter = new MyBucketAdapter(arrayList, this);
+        listItemsCatalog.setAdapter(myBucketAdapter);
 
     }
 }

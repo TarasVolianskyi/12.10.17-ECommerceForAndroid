@@ -9,6 +9,7 @@ public class Item {
     private String name;
     private String price;
     private String prevoiusPrice;
+
     private int imageDRW;
 
     public String getName() {

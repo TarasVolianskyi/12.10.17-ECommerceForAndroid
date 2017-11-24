@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="175sp">
 
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="286dp"
-        android:src="@drawable/bcgrnd" />
+        android:layout_height="wrap_content"
+        android:src="@drawable/bucketfone" />
 
     <ImageView
         android:id="@+id/ivImageOfItem"
