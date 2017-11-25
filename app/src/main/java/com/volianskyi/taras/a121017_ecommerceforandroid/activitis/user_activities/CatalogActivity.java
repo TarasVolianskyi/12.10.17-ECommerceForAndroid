@@ -30,8 +30,12 @@ public class CatalogActivity extends AppCompatActivity {
     private void initView() {
         ListView listItemsCatalog = (ListView) findViewById(R.id.lvMainListCatalogActivity);
         ArrayList<Item> arrayList = new ArrayList<>();
+        // cursor
+        //shared preferences   parameters Bucket
+
         for (int i = 0; i < 17; i++) {
             Item newItem = new Item();
+            newItem.setId(i);
             newItem.setName("Product - " + i);
             newItem.setPrice("Prise - " + i * 70);
             newItem.setPrevoiusPrice("Previous price - " + i * 90);

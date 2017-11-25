@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivPictureLayoutForDialogInBucket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tvNameLayoutForDialogInBucket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="name of product"
+        android:textAlignment="center"
+        android:textSize="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMinusLayoutForDialogInBucket"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="-"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/tvNnumberLayoutForDialogInBucket"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:text="1"
+            android:textAlignment="center"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/btnPlusLayoutForDialogInBucket"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="+"
+            android:textSize="24dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnOkayLayoutForDialogInBucket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="okay"
+        android:textSize="24dp" />
+
+</LinearLayout>

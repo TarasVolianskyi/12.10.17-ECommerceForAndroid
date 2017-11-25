@@ -60,6 +60,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(CREATE_TABLE_PRODUCTS);
         sqLiteDatabase.execSQL(CREATE_TABLE_CATEGORIES);
         fillDB(sqLiteDatabase);
+       // fillProducts(sqLiteDatabase);
+    }
+
+    private void fillProducts(SQLiteDatabase sqLiteDatabase) {
+
+        for (int i = 0; i < 10; i++) {
+            ContentValues cv = new ContentValues();
+            cv.put(NAME_PRODUCTS_TABLE, "Product "+i);
+            cv.put(PRICE_PRODUCTS_TABLE, 10*i);
+            cv.put(CATEGORY_PRODUCTS_TABLE, "null");
+            sqLiteDatabase.insert(PRODUCTS_TABLE_NAME, null, cv);
+        }
+
     }
 
     private void fillDB(SQLiteDatabase sqLiteDatabase) {
