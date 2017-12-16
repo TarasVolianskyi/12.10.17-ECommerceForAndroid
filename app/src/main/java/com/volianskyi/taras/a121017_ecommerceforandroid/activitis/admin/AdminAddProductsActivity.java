@@ -14,8 +14,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.volianskyi.taras.a121017_ecommerceforandroid.database.DatabaseHelper;
 import com.volianskyi.taras.a121017_ecommerceforandroid.R;
+import com.volianskyi.taras.a121017_ecommerceforandroid.pojo.ProductsPojo;
 
 public class AdminAddProductsActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private EditText etNameOfNewItemFromAdmin;
@@ -23,6 +26,8 @@ public class AdminAddProductsActivity extends AppCompatActivity implements View.
     private EditText etSaleOfItemInPersent;
     private Bundle bundle = new Bundle();
     private Spinner spinnerOfCatogies;
+    DatabaseReference databaseProducts = FirebaseDatabase.getInstance().getReference("products");
+
 
 
     @Override
@@ -75,6 +80,12 @@ public class AdminAddProductsActivity extends AppCompatActivity implements View.
         contentValues.put(DatabaseHelper.CATEGORY_PRODUCTS_TABLE, categoryOfNewProduct);
         getContentResolver().insert(DatabaseHelper.URI_PRODUCTS, contentValues);
         startActivity(new Intent(AdminAddProductsActivity.this, AdminProductsActivity.class));
+
+        String id = databaseProducts.push().getKey();
+        ProductsPojo product = new ProductsPojo(id, nameOfNewProduct, priceOfNewProduct, priceOfNewProduct+"0",categoryOfNewProduct);
+        databaseProducts.child(id).setValue(product);
+
+
     }
 
     @Override

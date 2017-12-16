@@ -8,12 +8,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.volianskyi.taras.a121017_ecommerceforandroid.database.DatabaseHelper;
 import com.volianskyi.taras.a121017_ecommerceforandroid.R;
+import com.volianskyi.taras.a121017_ecommerceforandroid.pojo.UsersPojo;
 
 public class AdminAddUsersActivity extends AppCompatActivity implements View.OnClickListener {
     EditText etNameOfNewUserFromAdmin;
     EditText etPassOfNewUserFromAdmin;
+    DatabaseReference databaseUsers = FirebaseDatabase.getInstance().getReference("users");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,5 +45,9 @@ public class AdminAddUsersActivity extends AppCompatActivity implements View.OnC
         contentValues.put(DatabaseHelper.PASS_USERS_TABLE, passOfNewUser);
         getContentResolver().insert(DatabaseHelper.URI_USERS, contentValues);
         startActivity(new Intent(AdminAddUsersActivity.this, AdminUsersActivity.class));
+
+        String id = databaseUsers.push().getKey();
+        UsersPojo user = new UsersPojo(id, nameOfNewUser, nameOfNewUser + " Petrov", nameOfNewUser + "@gmail.com", passOfNewUser);
+        databaseUsers.child(id).setValue(user);
     }
 }
