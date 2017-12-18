@@ -82,7 +82,7 @@ public class AdminAddProductsActivity extends AppCompatActivity implements View.
         startActivity(new Intent(AdminAddProductsActivity.this, AdminProductsActivity.class));
 
         String id = databaseProducts.push().getKey();
-        ProductsPojo product = new ProductsPojo(id, nameOfNewProduct, priceOfNewProduct, priceOfNewProduct+"0",categoryOfNewProduct);
+        ProductsPojo product = new ProductsPojo(id, nameOfNewProduct, priceOfNewProduct, priceOfNewProduct+"0",categoryOfNewProduct,"");
         databaseProducts.child(id).setValue(product);
 
 
