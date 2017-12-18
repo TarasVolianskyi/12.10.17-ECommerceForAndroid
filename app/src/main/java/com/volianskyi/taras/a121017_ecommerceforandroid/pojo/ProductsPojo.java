@@ -10,17 +10,19 @@ public class ProductsPojo {
     private String priceProd;
     private String prevPriceProd;
     private String categorProd;
+    private String descriptionProd;
 
-    public ProductsPojo(){
+    public ProductsPojo() {
 
     }
 
-    public ProductsPojo(String idProd, String nameProd, String priceProd, String prevPriceProd, String categorProd) {
+    public ProductsPojo(String idProd, String nameProd, String priceProd, String prevPriceProd, String categorProd, String descriptionProd) {
         this.idProd = idProd;
         this.nameProd = nameProd;
         this.priceProd = priceProd;
         this.prevPriceProd = prevPriceProd;
         this.categorProd = categorProd;
+        this.descriptionProd = descriptionProd;
     }
 
     public String getIdProd() {
@@ -31,7 +33,7 @@ public class ProductsPojo {
         this.idProd = idProd;
     }
 
-    public String getNameProd() {
+    public String getNameProd()  {
         return nameProd;
     }
 
@@ -61,5 +63,13 @@ public class ProductsPojo {
 
     public void setCategorProd(String categorProd) {
         this.categorProd = categorProd;
+    }
+
+    public String getDescriptionProd() {
+        return descriptionProd;
+    }
+
+    public void setDescriptionProd(String descriptionProd) {
+        this.descriptionProd = descriptionProd;
     }
 }
