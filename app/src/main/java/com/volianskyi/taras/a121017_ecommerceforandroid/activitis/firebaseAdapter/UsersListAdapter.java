@@ -50,7 +50,6 @@ public class UsersListAdapter extends ArrayAdapter<UsersPojo> {
         textViewLastName.setText(user.getUserLastName());
         textViewMail.setText(user.getUserEmail());
         textViewPass.setText(user.getUserPass());
-
         return listViewItem;
     }
 }

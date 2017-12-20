@@ -4,14 +4,20 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.CursorAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -88,6 +94,15 @@ public class AdminUsersActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
+        lvUsersAdminUsersActivity.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                UsersPojo user = usersList.get(i);
+                showUpdateDialog(user.getUserId(), user.getUserName()/*,user.getUserLastName(),user.getUserEmail(),user.getUserPass()*/);
+                return false;
+            }
+        });
     }
 
     private void initFAB() {
@@ -99,6 +114,47 @@ public class AdminUsersActivity extends AppCompatActivity {
                 startActivity(new Intent(AdminUsersActivity.this, AdminAddUsersActivity.class));
             }
         });
+    }
+
+    private void showUpdateDialog(final String artistID, String artistName) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.layout_update_user_dialog, null);
+        dialogBuilder.setView(dialogView);
+        final EditText editTextName = (EditText) dialogView.findViewById(R.id.etNameUpdateDialog);
+        final Button btnUpdate = (Button) dialogView.findViewById(R.id.btnUpdateDialog);
+        final Spinner spinnerUpdate = (Spinner) dialogView.findViewById(R.id.spinnerUpdaetDialog);
+        dialogBuilder.setTitle("Update artist " + artistName);
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = editTextName.getText().toString().trim();
+                String lastName = spinnerUpdate.getSelectedItem().toString();
+                String email = "email@"+spinnerUpdate.getSelectedItem().toString();
+                String pass = "pass "+spinnerUpdate.getSelectedItem().toString();
+
+
+                if (TextUtils.isEmpty(name)) {
+                    editTextName.setError("Name required");
+                    return;
+                }
+                updateArtist(artistID, name, lastName,email,pass);
+
+            }
+        });
+
+        AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+    }
+
+    private boolean updateArtist(String id, String name, String lastName, String email, String pass) {
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users").child(id);
+        UsersPojo user = new UsersPojo(id, name, lastName,email,pass);
+        databaseReference.setValue(user);
+        Toast.makeText(this, "User updated", Toast.LENGTH_SHORT).show();
+        return true;
     }
 
 }

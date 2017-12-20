@@ -5,4 +5,6 @@ package com.volianskyi.taras.a121017_ecommerceforandroid.activitis.firebaseAdapt
  */
 
 public class ProductsListAdapter {
+
 }
+

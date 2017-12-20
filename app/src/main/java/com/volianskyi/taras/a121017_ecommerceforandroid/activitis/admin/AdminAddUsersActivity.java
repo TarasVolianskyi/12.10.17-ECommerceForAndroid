@@ -49,5 +49,7 @@ public class AdminAddUsersActivity extends AppCompatActivity implements View.OnC
         String id = databaseUsers.push().getKey();
         UsersPojo user = new UsersPojo(id, nameOfNewUser, nameOfNewUser + " Petrov", nameOfNewUser + "@gmail.com", passOfNewUser);
         databaseUsers.child(id).setValue(user);
+
+
     }
 }
