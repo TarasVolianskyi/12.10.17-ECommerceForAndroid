@@ -6,5 +6,18 @@ package com.volianskyi.taras.a121017_ecommerceforandroid.activitis.firebaseAdapt
 
 public class ProductsListAdapter {
 
+    private String name;
+
+    public ProductsListAdapter(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 
